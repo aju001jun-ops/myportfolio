@@ -1,0 +1,913 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #c8b89a;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    color: #1a1008;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+a {
+    color: #1a1008;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #5a2d00;
+}
+
+/* ── PAGE WRAPPER ── */
+.page {
+    background: #f2e8d5;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0;
+    box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.35), -2px -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ── FRONT PAGE (WANTED NOTICE) ── */
+.front-page {
+    min-height: 100vh;
+    padding: 40px 48px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 6px double #1a1008;
+    position: relative;
+}
+
+/* decorative corner marks */
+.front-page::before,
+.front-page::after {
+    content: '✦';
+    position: absolute;
+    font-size: 18px;
+    color: #5a2d00;
+    opacity: 0.4;
+}
+
+.front-page::before {
+    top: 16px;
+    left: 24px;
+}
+
+.front-page::after {
+    top: 16px;
+    right: 24px;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+    width: 100%;
+    text-align: center;
+    border-top: 5px solid #1a1008;
+    border-bottom: 5px solid #1a1008;
+    padding: 10px 0 8px;
+    margin-bottom: 4px;
+}
+
+.masthead-kicker {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #5a2d00;
+    margin-bottom: 6px;
+}
+
+.masthead h1 {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: #1a1008;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.masthead-sub {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-top: 1px solid #1a1008;
+    border-bottom: 1px solid #1a1008;
+    padding: 4px 0;
+    margin-top: 8px;
+    color: #3a2000;
+}
+
+/* ── DATELINE BAR ── */
+.dateline {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-bottom: 2px solid #1a1008;
+    margin-bottom: 36px;
+    color: #3a2000;
+}
+
+/* ── WANTED NOTICE BOX ── */
+.wanted-box {
+    width: 520px;
+    border: 4px solid #1a1008;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    background: #ede0c4;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wanted-header {
+    background: #1a1008;
+    color: #f2e8d5;
+    padding: 10px 0 8px;
+    letter-spacing: 0.5em;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: 3px solid #8b4513;
+}
+
+.wanted-reward {
+    background: #8b4513;
+    color: #f2e8d5;
+    padding: 5px 0;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.wanted-title {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1a1008;
+    padding: 19px 0 6px;
+    line-height: 1;
+    border-bottom: 2px solid #1a1008;
+    margin: 0 16px;
+}
+
+.wanted-photo {
+    width: 340px;
+    height: 330px;
+    margin: 20px auto 0;
+    border: 3px solid #1a1008;
+    background: #c8b89a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.wanted-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: sepia(30%) contrast(1.05);
+}
+
+.wanted-photo .photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #5a2d00;
+}
+
+
+
+
+
+.wanted-info {
+    padding: 16px 20px 20px;
+    border-top: 2px solid #1a1008;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.wanted-name {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid #1a1008;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.wanted-alias {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #5a2d00;
+    margin-bottom: 12px;
+}
+
+.wanted-details {
+    font-size: 11.5px;
+    line-height: 2;
+    border-top: 1px solid #aaa;
+    padding-top: 10px;
+}
+
+.wanted-details b {
+    display: inline-block;
+    width: 90px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5a2d00;
+}
+
+.wanted-footer-text {
+    background: #1a1008;
+    color: #f2e8d5;
+    padding: 7px 0;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+
+.inner-page {
+    padding: 40px 48px;
+    border-bottom: 3px double #1a1008;
+}
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    border-top: 4px solid #1a1008;
+    border-bottom: 1px solid #1a1008;
+    padding: 4px 0;
+    margin: 24px 0 14px;
+    color: #3a2000;
+}
+
+.section-label:first-child {
+    margin-top: 0;
+}
+
+.col-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-left: 1px solid #aaa;
+}
+
+.col-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-left: 1px solid #aaa;
+}
+
+.col-grid-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+    border-left: 1px solid #aaa;
+}
+
+.col {
+    padding: 0 20px 20px;
+    border-right: 1px solid #aaa;
+}
+
+h2.headline {
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 8px;
+    color: #1a1008;
+}
+
+h3.subhead {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    color: #1a1008;
+}
+
+h4.colhead {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #1a1008;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    color: #1a1008;
+}
+
+.byline {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5a2d00;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c8b89a;
+}
+
+p {
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 8px;
+    hyphens: auto;
+    color: #1a1008;
+}
+
+blockquote {
+    border-top: 3px solid #1a1008;
+    border-bottom: 3px solid #1a1008;
+    margin: 16px 0;
+    padding: 12px 8px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: center;
+    color: #3a2000;
+}
+
+table.skills {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+}
+
+table.skills th {
+    text-align: left;
+    border-bottom: 2px solid #1a1008;
+    padding: 4px 4px;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #5a2d00;
+}
+
+table.skills td {
+    padding: 4px 4px;
+    border-bottom: 1px solid #c8b89a;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+table.skills td:first-child {
+    font-weight: 700;
+    width: 80px;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    color: #3a2000;
+}
+
+.project-card {
+    border: 1px solid #1a1008;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    background: #ede0c4;
+}
+
+.project-card .proj-name {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.project-card .proj-tech {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    color: #5a2d00;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px dotted #aaa;
+}
+
+.project-card p {
+    font-size: 11.5px;
+    margin: 0 0 6px;
+}
+
+.project-card a {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #5a2d00;
+}
+
+.award-item {
+    border-left: 3px solid #8b4513;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+
+.award-item .award-rank {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.award-item p {
+    font-size: 11px;
+    margin: 2px 0 0;
+    color: #3a2000;
+    text-align: left;
+}
+
+.contact-box {
+    border: 2px solid #1a1008;
+    padding: 12px;
+    margin-top: 12px;
+    background: #ede0c4;
+}
+
+.contact-box .ct-title {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #1a1008;
+    padding-bottom: 5px;
+    margin-bottom: 9px;
+    color: #3a2000;
+}
+
+.contact-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 11.5px;
+    align-items: baseline;
+}
+
+.contact-row .label {
+    font-weight: 900;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    min-width: 64px;
+    color: #5a2d00;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #a89070;
+    margin: 14px 0;
+}
+
+hr.thick {
+    border-top: 2px solid #1a1008;
+}
+
+hr.double {
+    border-top: 4px double #1a1008;
+    margin: 20px 0;
+}
+
+footer.gazette-footer {
+    background: #1a1008;
+    color: #f2e8d5;
+    padding: 14px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+footer.gazette-footer a {
+    color: #c8b89a;
+    text-decoration: none;
+}
+
+footer.gazette-footer a:hover {
+    color: #f2e8d5;
+    text-decoration: underline;
+}
+
+.page-break-label {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #5a2d00;
+    padding: 10px 0 0;
+    border-top: 1px solid #a89070;
+}
+
+small,
+.small {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: #5a2d00;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c8b89a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8b4513;
+    border-radius: 3px;
+}
+
+
+
+/* ── HIRE SECTION ── */
+.hire-section {
+    background: #1a1008;
+    border-bottom: none;
+}
+
+.hire-section .section-label {
+    color: #f2e8d5;
+    border-top-color: #8b4513;
+    border-bottom-color: #5a2d00;
+}
+
+.hire-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* LEFT */
+.hire-left {
+    padding-top: 8px;
+}
+
+.hire-headline {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.0;
+    color: #f2e8d5;
+    margin-bottom: 16px;
+    font-family: Georgia, serif;
+    text-align: left;
+}
+
+.hire-sub {
+    color: #c8b89a;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.hire-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.hire-channel-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1px solid #5a2d00;
+    color: #f2e8d5;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+    font-family: Georgia, serif;
+}
+
+.hire-channel-btn:hover {
+    background: #5a2d00;
+    color: #f2e8d5;
+    border-color: #8b4513;
+}
+
+.ch-icon {
+    font-size: 16px;
+    font-weight: 900;
+    width: 22px;
+    text-align: center;
+}
+
+.hire-note {
+    color: #5a2d00;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* RIGHT — dispatch form */
+.hire-right {
+    position: relative;
+}
+
+.dispatch-masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2e8d5;
+    padding: 6px 12px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    color: #1a1008;
+    border-bottom: 2px solid #1a1008;
+}
+
+.dispatch-stamp {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: #8b4513;
+    border: 2px solid #8b4513;
+    padding: 2px 8px;
+    transform: rotate(2deg);
+    display: inline-block;
+}
+
+/* The paper form */
+.paper-form-wrap {
+    background: #f2e8d5;
+    transform-origin: center center;
+    transition: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-inner {
+    padding: 16px;
+}
+
+.form-field {
+    margin-bottom: 12px;
+}
+
+.form-label {
+    display: block;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #5a2d00;
+    font-family: Georgia, serif;
+    margin-bottom: 4px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    background: #ede0c4;
+    border: 1px solid #c8b89a;
+    padding: 8px 10px;
+    font-family: Georgia, serif;
+    font-size: 12.5px;
+    color: #1a1008;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #8b4513;
+}
+
+.form-textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.hire-send-btn {
+    width: 100%;
+    background: #1a1008;
+    color: #f2e8d5;
+    border: none;
+    padding: 12px;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hire-send-btn:hover {
+    background: #8b4513;
+}
+
+.hire-send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-disclaimer {
+    font-size: 10px;
+    color: #888;
+    text-align: center;
+    margin-top: 6px;
+    text-align: left;
+}
+
+/* Success state */
+.dispatch-success {
+    display: none;
+    background: #f2e8d5;
+    padding: 32px 20px;
+    text-align: center;
+    border: 2px solid #8b4513;
+}
+
+.dispatch-success.visible {
+    display: block;
+}
+
+.success-stamp {
+    font-size: 48px;
+    font-weight: 900;
+    color: #8b4513;
+    border: 4px solid #8b4513;
+    display: inline-block;
+    padding: 4px 20px;
+    transform: rotate(-8deg);
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+}
+
+.success-msg {
+    font-size: 13px;
+    color: #3a2000;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.new-dispatch-btn {
+    background: #1a1008;
+    color: #f2e8d5;
+    border: none;
+    padding: 10px 24px;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+.new-dispatch-btn:hover {
+    background: #8b4513;
+}
+
+/* ── PAPER BALL ANIMATION ── */
+#paperBallsContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.paper-ball {
+    position: absolute;
+    border-radius: 50%;
+    background: #f2e8d5;
+    box-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.15), inset 2px 2px 6px rgba(255, 255, 255, 0.4);
+    animation: throwBall 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes throwBall {
+    0% {
+        transform: scale(0.3) rotate(0deg);
+        opacity: 1;
+    }
+
+    30% {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.85) rotate(400deg) translateY(-20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.4) rotate(720deg) translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
+}
+
+@keyframes crumpleForm {
+    0% {
+        transform: scale(1) rotate(0deg);
+        filter: none;
+        border-radius: 0;
+    }
+
+    20% {
+        transform: scale(0.97) rotate(-1deg) skewX(1deg);
+        filter: blur(0px);
+    }
+
+    40% {
+        transform: scale(0.92) rotate(2deg) skewX(-2deg);
+        border-radius: 4px;
+    }
+
+    60% {
+        transform: scale(0.75) rotate(-4deg) skewX(3deg);
+        border-radius: 12px;
+        filter: blur(1px);
+    }
+
+    80% {
+        transform: scale(0.45) rotate(8deg);
+        border-radius: 50%;
+        filter: blur(2px);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(0) rotate(15deg);
+        border-radius: 50%;
+        opacity: 0;
+    }
+}
+
+.crumpling {
+    animation: crumpleForm 0.9s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes stampAppear {
+    0% {
+        transform: rotate(2deg) scale(3);
+        opacity: 0;
+    }
+
+    60% {
+        transform: rotate(-3deg) scale(0.9);
+        opacity: 1;
+    }
+
+    80% {
+        transform: rotate(1deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(-2deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.stamp-sent {
+    animation: stampAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* crumple lines drawn on the form */
+.crumple-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s;
+    background: repeating-linear-gradient(45deg, transparent, transparent 8px,
+            rgba(90, 45, 0, 0.04) 8px, rgba(90, 45, 0, 0.04) 9px),
+        repeating-linear-gradient(-45deg, transparent, transparent 12px,
+            rgba(90, 45, 0, 0.03) 12px, rgba(90, 45, 0, 0.03) 13px);
+}
+
+.crumple-overlay.show {
+    opacity: 1;
+}
