@@ -911,3 +911,99 @@ small,
 .crumple-overlay.show {
     opacity: 1;
 }
+
+/* ── MOBILE RESPONSIVENESS (max-width: 768px) ── */
+@media (max-width: 768px) {
+    /* 1. Page wrapper full width */
+    .page {
+        margin: 0;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    /* 2. Padding adjustments */
+    .front-page {
+        padding: 24px 16px 32px;
+    }
+
+    .inner-page {
+        padding: 24px 16px;
+    }
+
+    /* 3. Masthead header scaling */
+    .masthead h1 {
+        font-size: clamp(36px, 10vw, 64px);
+        letter-spacing: -1px;
+    }
+
+    /* 4. Dateline adjustment to stack elements */
+    .dateline {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    /* 5. Wanted Box responsiveness */
+    .wanted-box {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .wanted-photo {
+        width: 100%;
+        max-width: 280px;
+        height: 270px;
+        margin: 15px auto 0;
+    }
+
+    .wanted-info {
+        padding: 12px 16px 16px;
+    }
+
+    /* 6. Convert grids into single-column vertical stacks */
+    .col-grid-3,
+    .col-grid-2,
+    .col-grid-4 {
+        grid-template-columns: 1fr;
+        border-left: none;
+    }
+
+    .col {
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .col:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    /* 7. Hire Section stack adjustment */
+    .hire-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hire-headline {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .hire-sub,
+    .hire-note {
+        text-align: center;
+    }
+
+    /* 8. Footer stacking */
+    footer.gazette-footer {
+        padding: 16px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
